@@ -1,0 +1,62 @@
+@import "../../scss/common";
+
+.pb-site-footer {
+  color: $c-white;
+  margin-top: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.pb-site-footer__container {
+  @include container($space-l, $space-xl);
+}
+
+.pb-site-footer__bg {
+  background-color: $c-bg-dark;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.pb-site-footer-bg-img-wrapper {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &::after {
+    background-image: $gradient-site-footer-bg;
+    bottom: 0;
+    content: " ";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.pb-site-footer__bg-img {
+  background-position: center center;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.pb-site-footer__center {
+  padding: $space-l;
+  text-align: center;
+}
+
+.pb-site-footer__heart-icon {
+  color: $c-accent;
+  display: inline-block;
+}

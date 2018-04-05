@@ -1,0 +1,199 @@
+@import "../../scss/common";
+
+$block: "pb-book-card";
+
+.#{$block} {
+  position: relative;
+}
+
+.#{$block}__container {
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-l1;
+  color: $c-grey;
+  overflow: hidden;
+  text-align: left;
+}
+
+.#{$block}__wrapper {
+  background-color: $c-grey-lighter;
+  padding-top: 161.8%; // Aspect ratio is 1:1.618
+  position: relative;
+}
+
+.#{$block}__image-wrapper {
+  overflow: hidden;
+  padding-top: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.#{$block}__meta-wrapper {
+  background-color: $c-white;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  min-height: 100% - (100% / 1.618);
+  position: absolute;
+  right: 0;
+}
+
+.#{$block}__meta {
+  margin: 0;
+  padding: $space-s;
+}
+
+.#{$block}__image-overlay,
+.#{$block}__image {
+  display: block;
+  height: 100%;
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.#{$block}__image-overlay {
+  background-image: $gradient-dark-to-lighter-transparent;
+}
+
+.#{$block}__contest-icon {
+  color: $c-accent;
+  left: $space-m;
+  margin-top: 0;
+  position: absolute;
+  top: $space-m;
+}
+
+.#{$block}__level-strip {
+  color: $c-white;
+  display: block;
+  font-size: modular-scale(-1);
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-caps;
+  padding: $space-xs $space-s;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.#{$block}__language + .#{$block}__level {
+  &::before {
+    content: " - ";
+  }
+}
+
+.#{$block}__link {
+  height: 100%;
+  left: 0;
+  margin-top: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.#{$block}__title {
+  display: block;
+  font-size: modular-scale(-1);
+  font-weight: $font-weight-bold;
+
+  &--bhoti {
+    line-height: $line-height-heading-bothi;
+  }
+}
+
+.#{$block}__author {
+  display: block;
+  font-size: modular-scale(-1);
+  font-weight: $font-weight;
+
+  & + & {
+    margin-top: $space-s;
+  }
+}
+
+.#{$block}__recommendation-icon {
+  vertical-align: sub;
+}
+
+.#{$block}__recommendation {
+  bottom: 0;
+  color: $c-accent;
+  font-size: modular-scale(-2);
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-caps;
+  line-height: $space-l;
+  margin-top: 0;
+  padding: $space-s 0;
+  position: absolute; // Relative to __wrapper
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.#{$block}__dropdown {
+  margin-top: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.#{$block}__dropdown-link {
+  display: block;
+  padding: $space-m $space-m $space-m $space-l;
+}
+
+.#{$block}--level-1 {
+  .#{$block}__level-strip {
+    background-color: $c-level-1;
+  }
+}
+
+.#{$block}--level-2 {
+  .#{$block}__level-strip {
+    background-color: $c-level-2;
+  }
+}
+
+.#{$block}--level-3 {
+  .#{$block}__level-strip {
+    background-color: $c-level-3;
+  }
+}
+
+.#{$block}--level-4 {
+  .#{$block}__level-strip {
+    background-color: $c-level-4;
+  }
+}
+
+.#{$block}--recommended {
+  .#{$block}__meta {
+    padding-bottom: $space-xl - $space-s;
+  }
+}
+
+.#{$block}--font-size-l {
+  font-size: strip-unit(modular-scale(1)) * 1rem;
+
+  .#{$block}__recommendation-icon {
+    vertical-align: $vertical-align-icon;
+  }
+}
+
+.#{$block}--disabled {
+  opacity: $opacity-disabled;
+
+  .#{$block}__link {
+    cursor: not-allowed;
+  }
+}
+
+.#{$block}--faded {
+  opacity: $opacity;
+}
+
+.#{$block}--loading {
+  .#{$block}__link {
+    cursor: wait;
+  }
+}

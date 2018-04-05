@@ -1,0 +1,24 @@
+@import "../../scss/common";
+
+@import "../../scss/common";
+
+$block: "pb-books-search-results";
+
+.#{$block}__bulk-download-bar {
+  border-bottom: $border;
+  padding-bottom: $space-m;
+}
+
+.#{$block}__bulk-download-cancel,
+.#{$block}__bulk-download {
+  float: right;
+}
+
+.#{$block}__bulk-download-select-all {
+  margin-top: $space-m;
+}
+
+.#{$block}__bulk-download-count {
+  border-bottom: $border;
+  padding-bottom: $space-m;
+}
